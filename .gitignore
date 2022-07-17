@@ -31,7 +31,22 @@ build/
 
 ### VS Code ###
 .vscode/
+
 /.metadata/
 gatherRoom/src/main/resources/application.properties
 gatherRoom/src/main/resources/application.properties
 gatherRoom/src/main/resources/application.properties
+.metadata/.lock
+.metadata/.log
+.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.location
+.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap
+.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+.metadata/.plugins/org.eclipse.core.resources/0.snap
+.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat
+.metadata/.plugins/org.eclipse.jdt.launching/.install.xml
+.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml
+.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log
+.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.16.3.20211002-1029.xml
+.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml
+.metadata/version.ini
