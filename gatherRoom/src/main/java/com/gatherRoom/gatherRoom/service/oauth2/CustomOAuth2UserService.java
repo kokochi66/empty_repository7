@@ -1,7 +1,7 @@
 package com.gatherRoom.gatherRoom.service.oauth2;
 
-import com.gatherRoom.gatherRoom.domain.User;
-import com.gatherRoom.gatherRoom.repository.UserRepository;
+import com.gatherRoom.gatherRoom.domain.oauth2.User;
+import com.gatherRoom.gatherRoom.repository.oauth2.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;

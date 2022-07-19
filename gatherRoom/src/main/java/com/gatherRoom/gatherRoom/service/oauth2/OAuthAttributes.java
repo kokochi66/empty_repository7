@@ -1,7 +1,7 @@
 package com.gatherRoom.gatherRoom.service.oauth2;
 
-import com.gatherRoom.gatherRoom.domain.Role;
-import com.gatherRoom.gatherRoom.domain.User;
+import com.gatherRoom.gatherRoom.domain.oauth2.Role;
+import com.gatherRoom.gatherRoom.domain.oauth2.User;
 import lombok.Builder;
 import lombok.Getter;
 

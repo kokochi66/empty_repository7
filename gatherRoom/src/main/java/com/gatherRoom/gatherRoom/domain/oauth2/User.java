@@ -1,4 +1,4 @@
-package com.gatherRoom.gatherRoom.domain;
+package com.gatherRoom.gatherRoom.domain.oauth2;
 
 import lombok.Builder;
 import lombok.Getter;
