@@ -34,3 +34,4 @@ build/
 
 ### metadata ###
 .metadata/
+application.properties
