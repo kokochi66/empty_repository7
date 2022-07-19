@@ -31,7 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
-
 ### metadata ###
 .metadata/
 application.properties
