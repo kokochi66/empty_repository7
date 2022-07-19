@@ -1,6 +1,6 @@
-package com.gatherRoom.gatherRoom.repository;
+package com.gatherRoom.gatherRoom.repository.oauth2;
 
-import com.gatherRoom.gatherRoom.domain.User;
+import com.gatherRoom.gatherRoom.domain.oauth2.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

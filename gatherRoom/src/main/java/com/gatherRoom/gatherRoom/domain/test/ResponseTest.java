@@ -1,4 +1,4 @@
-package com.gatherRoom.gatherRoom.domain;
+package com.gatherRoom.gatherRoom.domain.test;
 
 import lombok.*;
 

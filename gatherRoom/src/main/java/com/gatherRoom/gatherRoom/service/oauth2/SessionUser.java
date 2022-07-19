@@ -1,6 +1,6 @@
 package com.gatherRoom.gatherRoom.service.oauth2;
 
-import com.gatherRoom.gatherRoom.domain.User;
+import com.gatherRoom.gatherRoom.domain.oauth2.User;
 import lombok.Getter;
 
 import java.io.Serializable;

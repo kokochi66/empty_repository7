@@ -1,6 +1,6 @@
-package com.gatherRoom.gatherRoom.config;
+package com.gatherRoom.gatherRoom.config.oauth2;
 
-import com.gatherRoom.gatherRoom.domain.Role;
+import com.gatherRoom.gatherRoom.domain.oauth2.Role;
 import com.gatherRoom.gatherRoom.service.oauth2.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
