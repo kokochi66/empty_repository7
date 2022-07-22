@@ -1,7 +1,11 @@
 package com.gatherRoom.gatherRoom.controller.test;
 
 import com.gatherRoom.gatherRoom.domain.test.FoodTest;
+import com.gatherRoom.gatherRoom.domain.test.JpaFoodRepository;
+
 import lombok.extern.log4j.Log4j2;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,6 +19,8 @@ import java.util.List;
 @Log4j2
 @RequestMapping(value = "/test")
 public class TestController {
+	
+	@Autowired JpaFoodRepository rep;
 
     @GetMapping("/page")
     public String testPage() {
@@ -52,11 +58,10 @@ public class TestController {
     @ResponseBody
     public FoodTest insertFood(@PathVariable("foodName") String foodName,
                                       @PathVariable("price") Integer price) {
-        return FoodTest.builder()
-                .foodId(1L)
-                .foodName(foodName)
-                .price(price)
-                .build();
+    	FoodTest food = new FoodTest();
+    	food.setFoodName(foodName);
+    	food.setPrice(price);
+        return rep.save(food);
     }
 
     @GetMapping("/food/update/{foodId}/{foodName}/{price}")
