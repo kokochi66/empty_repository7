@@ -1,8 +1,7 @@
 package com.gatherRoom.gatherRoom.controller.test;
 
+import com.gatherRoom.gatherRoom.domain.test.FoodService;
 import com.gatherRoom.gatherRoom.domain.test.FoodTest;
-import com.gatherRoom.gatherRoom.domain.test.JpaFoodRepository;
-
 import lombok.extern.log4j.Log4j2;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,14 @@ import java.util.List;
 @Log4j2
 @RequestMapping(value = "/test")
 public class TestController {
-	
-	@Autowired JpaFoodRepository rep;
 
+	private final FoodService foodService;
+	
+	@Autowired
+	public TestController (FoodService foodService) {
+		this.foodService = foodService;
+	}
+	
     @GetMapping("/page")
     public String testPage() {
         return "test";
@@ -61,7 +65,8 @@ public class TestController {
     	FoodTest food = new FoodTest();
     	food.setFoodName(foodName);
     	food.setPrice(price);
-        return rep.save(food);
+    	log.info(food);
+    	return foodService.insertFood(food);
     }
 
     @GetMapping("/food/update/{foodId}/{foodName}/{price}")

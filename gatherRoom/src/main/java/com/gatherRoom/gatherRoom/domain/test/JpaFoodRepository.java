@@ -6,12 +6,13 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Repository;
 
-@ComponentScan
+@Repository
 public class JpaFoodRepository implements FoodRepository{
 	
 	private final EntityManager em;
-	
+	// 마찬가지로 JpaFoodRep 는 EntitiyMamger와 의존관계이기 때문에 생성자로 주입해준다.
 	public JpaFoodRepository(EntityManager em) {
 		this.em = em;
 	}
@@ -32,7 +33,7 @@ public class JpaFoodRepository implements FoodRepository{
 	@Override
 	public Optional<FoodTest> findByName(String foodName) {
 		// Jpql이라는 객체지향 쿼리를 써야 한다. 객체 자체를 select 한다. 
-		List<FoodTest> result = em.createQuery("select food from FoodTest as food where food.name = :name", FoodTest.class)
+		List<FoodTest> result = em.createQuery("select food from FoodTest as food where food.name = :foodName", FoodTest.class)
 		.setParameter("foodName", foodName)
 		.getResultList();
 		return result.stream().findAny();
