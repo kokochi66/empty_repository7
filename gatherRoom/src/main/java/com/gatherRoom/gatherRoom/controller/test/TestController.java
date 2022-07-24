@@ -24,28 +24,8 @@ public class TestController {
     @GetMapping("/food/read")
     @ResponseBody
     public List<FoodTest> getFoodList() {
-        List<FoodTest> foodTestList = new ArrayList<>();
-        foodTestList.add(FoodTest.builder()
-                .foodId(1L)
-                .foodName("사과")
-                .price(1000)
-                .build());
-        foodTestList.add(FoodTest.builder()
-                .foodId(2L)
-                .foodName("배")
-                .price(1500)
-                .build());
-        foodTestList.add(FoodTest.builder()
-                .foodId(3L)
-                .foodName("포도")
-                .price(10000)
-                .build());
-        foodTestList.add(FoodTest.builder()
-                .foodId(4L)
-                .foodName("토마토")
-                .price(5000)
-                .build());
-        return foodTestList;
+        
+        return foodService.findFoods();
     }
 
     @GetMapping("/food/insert/{foodName}/{price}")
@@ -76,21 +56,13 @@ public class TestController {
     @ResponseBody
     public FoodTest readFood(
             @PathVariable("foodId") Long foodId) {
-        return FoodTest.builder()
-                .foodId(foodId)
-                .foodName("사과")
-                .price(1000)
-                .build();
+        return foodService.findOne(foodId).get();
     }
 
     @GetMapping("/food/delete/{foodId}")
     @ResponseBody
     public FoodTest deleteFood(
             @PathVariable("foodId") Long foodId) {
-        return FoodTest.builder()
-                .foodId(foodId)
-                .foodName("사과")
-                .price(1000)
-                .build();
+        return foodService.delete(foodId);
     }
 }
