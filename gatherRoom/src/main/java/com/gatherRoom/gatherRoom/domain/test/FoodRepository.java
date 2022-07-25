@@ -10,6 +10,10 @@ public interface FoodRepository {
 	Optional<FoodTest> findById(Long foodId);
 	// 푸드를 아이디로 찾는다.
 	Optional<FoodTest> findByName(String foodName);
-	// 모든 푸드를 가져온다.
+	// 모든 음식를 가져온다.
 	List<FoodTest> findAll();
+	// 등록된 음식을 삭제한다.
+	FoodTest delete(Long foodId);
+	// 등록된 음식의 정보변경
+	FoodTest update(Long foodId);
 }

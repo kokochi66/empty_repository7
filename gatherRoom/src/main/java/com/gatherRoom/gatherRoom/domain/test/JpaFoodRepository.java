@@ -10,18 +10,18 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class JpaFoodRepository implements FoodRepository{
-	
+
 	private final EntityManager em;
 	// 마찬가지로 JpaFoodRep 는 EntitiyMamger와 의존관계이기 때문에 생성자로 주입해준다.
 	public JpaFoodRepository(EntityManager em) {
 		this.em = em;
 	}
-	
+
 	@Override
 	// pk기반인 save나 findById 는 Jpql 을 작성할 필요가 없다.
 	public FoodTest save(FoodTest food) {
 		em.persist(food);
-		return food; 
+		return food;
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class JpaFoodRepository implements FoodRepository{
 
 	@Override
 	public Optional<FoodTest> findByName(String foodName) {
-		// Jpql이라는 객체지향 쿼리를 써야 한다. 객체 자체를 select 한다. 
+		// Jpql이라는 객체지향 쿼리를 써야 한다. 객체 자체를 select 한다.
 		List<FoodTest> result = em.createQuery("select food from FoodTest as food where food.name = :foodName", FoodTest.class)
 		.setParameter("foodName", foodName)
 		.getResultList();
@@ -45,5 +45,28 @@ public class JpaFoodRepository implements FoodRepository{
 		return result;
 	}
 
-	
+
+	@Override
+	public FoodTest delete(Long foodId) {
+		FoodTest food = em.find(FoodTest.class, foodId);
+		FoodTest result;
+		if(food != null) {
+			em.remove(food);
+			result = food;
+			return result;
+		}
+		result = null;
+		return result;
+	}
+
+	@Override
+	// food Id로 fodd 찾고 => null 이 아니라면
+	// 그 정보를 바탕으로 seletfood 해서 setter 로 foodName,Price를 세팅하고
+	// save!
+	public FoodTest update(Long foodId) {
+		FoodTest food = em.find(FoodTest.class, foodId);
+		return null;
+	}
+
+
 }
