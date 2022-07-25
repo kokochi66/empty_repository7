@@ -18,7 +18,7 @@ import java.util.List;
 @Log4j2
 @RequestMapping(value = "/test")
 public class TestController {
-
+	
 	private final FoodService foodService;
 	
 	@Autowired
@@ -28,6 +28,7 @@ public class TestController {
 	
     @GetMapping("/page")
     public String testPage() {
+    	log.info("안녕하세요");
         return "test";
     }
 
