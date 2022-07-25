@@ -2,8 +2,8 @@ package com.gatherRoom.gatherRoom.controller.test;
 
 import com.gatherRoom.gatherRoom.domain.test.FoodService;
 import com.gatherRoom.gatherRoom.domain.test.FoodTest;
+import com.gatherRoom.gatherRoom.repository.FoodRepositoryJpa;
 import lombok.extern.log4j.Log4j2;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -20,6 +19,9 @@ import java.util.List;
 public class TestController {
 
 	private final FoodService foodService;
+
+    @Autowired
+    private FoodRepositoryJpa foodRepositoryJpa;
 	
 	@Autowired
 	public TestController (FoodService foodService) {
@@ -34,7 +36,6 @@ public class TestController {
     @GetMapping("/food/read")
     @ResponseBody
     public List<FoodTest> getFoodList() {
-        
         return foodService.findFoods();
     }
 
@@ -46,7 +47,7 @@ public class TestController {
     	food.setFoodName(foodName);
     	food.setPrice(price);
     	log.info(food);
-    	return foodService.insertFood(food);
+    	return foodRepositoryJpa.save(food);
     }
 
     @GetMapping("/food/update/{foodId}/{foodName}/{price}")
@@ -55,24 +56,27 @@ public class TestController {
             @PathVariable("foodId") Long foodId,
             @PathVariable("foodName") String foodName,
             @PathVariable("price") Integer price) {
-        return FoodTest.builder()
+        return foodRepositoryJpa.save(FoodTest.builder()
                 .foodId(foodId)
                 .foodName(foodName)
                 .price(price)
-                .build();
+                .build());
     }
 
     @GetMapping("/food/read/{foodId}")
     @ResponseBody
     public FoodTest readFood(
             @PathVariable("foodId") Long foodId) {
-        return foodService.findOne(foodId).get();
+        return foodRepositoryJpa.findById(foodId).get();
     }
 
     @GetMapping("/food/delete/{foodId}")
     @ResponseBody
     public FoodTest deleteFood(
             @PathVariable("foodId") Long foodId) {
-        return foodService.delete(foodId);
+        FoodTest foodTest = foodRepositoryJpa.findById(foodId).get();
+        foodRepositoryJpa.deleteById(foodId);
+        return foodTest;
     }
+
 }
