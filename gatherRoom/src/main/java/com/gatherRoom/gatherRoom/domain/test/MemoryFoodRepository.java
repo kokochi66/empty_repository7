@@ -12,7 +12,7 @@ public class MemoryFoodRepository implements FoodRepository{
 
 	private static Map<Long, FoodTest> store = new HashMap<>();
 	private static long sequence = 0L;
-	
+
 	@Override
 	public FoodTest save(FoodTest food) {
 		food.setFoodId(++sequence);
@@ -38,10 +38,11 @@ public class MemoryFoodRepository implements FoodRepository{
 		// 신기하네
 		return new ArrayList<>(store.values());
 	}
-	
+
 	public void clearStore() {
 		store.clear();
 	}
+
 
 	@Override
 	public FoodTest delete(Long foodId) {

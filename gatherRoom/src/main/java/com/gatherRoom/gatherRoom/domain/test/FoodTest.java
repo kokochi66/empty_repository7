@@ -10,9 +10,9 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Table(name = "gr_food_test")
-@Entity
+@Entity // JPA가 관리하는 Entity 구나~
 public class FoodTest {
-    @Id
+    @Id // PK야
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long foodId;
     private String foodName;
