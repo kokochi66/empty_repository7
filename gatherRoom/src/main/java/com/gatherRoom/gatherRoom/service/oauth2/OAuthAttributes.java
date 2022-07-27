@@ -4,10 +4,12 @@ import com.gatherRoom.gatherRoom.domain.oauth2.Role;
 import com.gatherRoom.gatherRoom.domain.oauth2.User;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.ToString;
 
 import java.util.Map;
 
 @Getter
+@ToString
 public class OAuthAttributes {
     private Map<String, Object> attributes;
     private String nameAttributeKey;
