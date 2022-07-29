@@ -14,7 +14,6 @@ public class ChatController {
 	public ChatMessagePojo sendMessage(@Payload ChatMessagePojo chatMessagePojo) {
 
 		return chatMessagePojo;
-
 	}
 
 	@MessageMapping("/chat.addUser")
