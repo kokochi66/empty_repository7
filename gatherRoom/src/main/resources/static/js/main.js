@@ -18,6 +18,7 @@ var colors = [
 ];
 
 function connect(event) {
+	// User Name을 받아옴
     username = document.querySelector('#name').value.trim();
 
 	if(username){
@@ -25,9 +26,13 @@ function connect(event) {
 	}
 
     if(username) {
+	// 페이지 형태 바꿔주고
         usernamePage.classList.add('hidden');
         chatPage.classList.remove('hidden');
- // SockJS와 stomp client를 통해 연결을 시도.
+        
+ // SockJS와 stomp client를 통해 연결을 시도. /ws라는 경로로 연결시도
+ // /ws라는 경로로 연결시도 WebSocketConfig에 Endpoint로 저장되어 있음.
+ // JS는 왜 .누르면 안나오누 Stomp가 JS 객체가 아닌가? 
         var socket = new SockJS('/ws');
         stompClient = Stomp.over(socket);
 
@@ -42,8 +47,10 @@ function onConnected() {
     stompClient.subscribe('/topic/public', onMessageReceived);
 
     // Tell your username to the server
+    // /app/chat.addUser라는 목적지로 보낸다. config의 setApplicationDestinationPrefixes와 관련이 있다.
     stompClient.send("/app/chat.addUser",
         {},
+        // JSON 문자열로 변환
         JSON.stringify({sender: username, type: 'JOIN'})
     )
 
@@ -65,13 +72,16 @@ function sendMessage(event) {
             content: messageInput.value,
             type: 'CHAT'
         };
+        // /app 이라는 친구를 통해서 MessageBrokerRegistry를 이용가능함.
+        // 왜 와이? setApplicationDestinationPrefixes를 통해서 prefixes가 /app으로 들어오는 것만 받기로 했으니까
         stompClient.send("/app/chat.sendMessage", {}, JSON.stringify(chatMessage));
         messageInput.value = '';
     }
     event.preventDefault();
 }
 
-
+// 메세지 수신시 payload로 받는다?
+// Payload와 묶인 것이 ChatMessagePoso 
 function onMessageReceived(payload) {
     var message = JSON.parse(payload.body);
 
