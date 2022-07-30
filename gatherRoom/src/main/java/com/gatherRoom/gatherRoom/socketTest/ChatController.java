@@ -27,6 +27,7 @@ public class ChatController {
 	
 	@GetMapping("/chat")
 	public String chatPage() {
+		// retrun 하는 것은 무조건 String , html 파일을 보내주는 것이 아니다.
 		return "chat";
 	}
 
