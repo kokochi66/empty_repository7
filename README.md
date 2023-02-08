@@ -1,22 +1,21 @@
-GatherRoom
-===
-메타버스 웹 게임 프로젝트
+# 웹게임 제작 프로젝트
 
-- [1주차 김재원 (7/16~22)](./gatherRoom/schedule/week1_kim.md)
-- [1주차 홍용택 (7/16~22)](./gatherRoom/schedule/week1_hong.md)
-- [2주차 김재원 (7/23~29)](./gatherRoom/schedule/week2_kim.md)
-- [2주차 홍용택 (7/23~29)](./gatherRoom/schedule/week2_hong.md)
-- [3주차 김재원 (7/30~8/5)](./gatherRoom/schedule/week3_kim.md)
-- [3주차 홍용택 (7/30~8/5)](./gatherRoom/schedule/week3_hong.md)
-- [4주차 김재원 (8/6~8/12)](./gatherRoom/schedule/week4_kim.md)
-- [4주차 홍용택 (8/6~8/12)](./gatherRoom/schedule/week4_hong.md)
-- [5주차 김재원 (8/13~8/19)](./gatherRoom/schedule/week5_kim.md)
-- [5주차 홍용택 (8/13~8/19)](./gatherRoom/schedule/week5_hong.md)
-- [6주차 김재원 (8/20~8/26)](./gatherRoom/schedule/week6_kim.md)
-- [6주차 홍용택 (8/20~8/26)](./gatherRoom/schedule/week6_hong.md)
-- [7주차 김재원 (8/27~9/2)](./gatherRoom/schedule/week7_kim.md)
-- [7주차 홍용택 (8/27~9/2)](./gatherRoom/schedule/week7_hong.md)
-- [8주차 김재원 (9/3~9/9)](./gatherRoom/schedule/week8_kim.md)
-- [8주차 홍용택 (9/3~9/9)](./gatherRoom/schedule/week8_hong.md)
-- [9주차 김재원 (9/10~9/16)](./gatherRoom/schedule/week9_kim.md)
-- [9주차 홍용택 (9/10~9/16)](./gatherRoom/schedule/week9_hong.md)
+GoLang 실시간 서버를 이용한 멀티 웹게임을 만드는 프로젝트임.
+
+GoLang 언어 자체적인 공부를 더불어, 실시간 서버를 만들며, 간단한 웹 게임을 만들어서 배포하는 과정까지 진행할 예정
+
+## 기술스택 
+- GoLang
+
+## 스터디
+- https://www.youtube.com/watch?v=4Oml8mbBXgo&list=PLy-g2fnSzUTDALoERcKDniql16SAaQYHF
+
+
+## 게임 기획
+- 먼저 작은 니즈를 기획하고, 이를 구현하고, 추가적인 니즈를 첨가하여 구현을 이어나가는 방식으로 진행할 예정
+
+
+## 일정
+- 초기 1개월 내로 만들 수 있는 간단한 미니 웹게임을 만들 예정
+- 스터디 필요
+- 기술 스택을 어떤 걸 사용할지를 
