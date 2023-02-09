@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lange="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+<body>
+    <ol>
+        {{range $index, $element := .}}
+        <li>{{$element.Name}} - {{$element.Motto}}</li>
+        {{end}}
+    </ol>
+    
+</body>
+</html>
