@@ -9,6 +9,7 @@ GoLang 언어 자체적인 공부를 더불어, 실시간 서버를 만들며, �
 
 ## 스터디
 - https://www.youtube.com/watch?v=4Oml8mbBXgo&list=PLy-g2fnSzUTDALoERcKDniql16SAaQYHF
+- https://www.youtube.com/watch?v=FyUCKxkCFAc&list=PLlameCF3cMEtP64u9VtbwYaviLCbnRsBA
 
 
 ## 게임 기획
