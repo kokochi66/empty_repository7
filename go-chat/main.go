@@ -12,9 +12,9 @@ func main() {
 	app.Use(cors.New())
 
 	pusherClient := pusher.Client{
-		AppID:   "1556635",
-		Key:     "339a391ab9d5967a36c2",
-		Secret:  "8a9f8083c91c76ebeee9",
+		AppID:   "appId",
+		Key:     "key",
+		Secret:  "secret",
 		Cluster: "ap3",
 		Secure:  true,
 	}

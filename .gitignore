@@ -34,3 +34,5 @@ build/
 ### metadata ###
 .metadata/
 application.properties
+
+push.key
